@@ -1,0 +1,27 @@
+{
+  "questions": [
+    {
+      "question_id": 1,
+      "question": "What is phishing?",
+      "correct_answer": 2,
+      "answers": [
+        "It's a new trendy catch-phrase to say fishing!",
+        "It's is a type of online scam where hackers impersonate legitimate organizations via email, text message, advertisement or other means in order to steal sensitive information.",
+        "It's a novel way hackers steal sensitive information via email, text message, advertisement, or other means."
+      ],
+      "correct_answer_response": "You got it! Be on the lookout for suspicious emails, text messages, etc.",
+      "incorrect_answer_response": "No that's not it. Sorry buddy!"
+    },
+    {
+      "question_id": 2,
+      "question": "You notice you have an email titled, \"Unusual Microsoft activity detected\". The email has just one blue link titled \"Check recent activity\". What do you do?",
+      "correct_answer": 1,
+      "answers": [
+        "You delete it!",
+        "You click on the link. After all, whats the worst that can happen, right?"
+      ],
+      "correct_answer_response": "You got it! This is a very crude attempt at phishing really. This was an easy one mind you!",
+      "incorrect_answer_response": "No no! An empty email with just a blue link is a HUGE red flag. Just delete it!"
+    }
+  ]
+}
