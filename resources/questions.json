@@ -34,6 +34,17 @@
       ],
       "correct_answer_response": "That's correct! You should under no circumstances share your password with anyone.",
       "incorrect_answer_response": "Nope. You should never ever share your password. Phishing emails are designed with a sense of false urgency. Please stop and think first."
+    },
+    {
+      "question_id": 4,
+      "question": "You get an email from your boss with an attachment \"critical_business_plan.exe\". There are instructions in the \nbody of the email to run it as soon as possible. What do you do?",
+      "correct_answer": 2,
+      "answers": [
+        "Its from your boss!! You must run it as soon as possible! Your job may be on the line.",
+        "You verify that the email was from your boss by checking the from address carefully. You then contact your \nboss and ask if he sent the email and inform him that his email account may have been compromised."
+      ],
+      "correct_answer_response": "That's correct! You should never open an executable file sent over email even if its from your boss. \nHis email account may have been compromised.",
+      "incorrect_answer_response": "Opps. You opened the link and boom, now you have a malware installed in your computer. Never open executables attached in an email."
     }
   ]
 }

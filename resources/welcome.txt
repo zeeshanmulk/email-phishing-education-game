@@ -1,4 +1,3 @@
 Welcome to this simple, text-based, Email Phishing educational game.
 Please make sure you have watched the educational presentation before
-that came with this project. Instructions are not necessary as its
-self-explanatory. Have fun!!
+that came with this project. Have fun!!
