@@ -1,5 +1,5 @@
 import json
-
+from art import art, tprint
 from question import Question
 
 
@@ -19,7 +19,7 @@ class Game:
 
     def welcome(self):
         print()
-        print(f"Hello {self.player}!!")
+        tprint(f"Hello {self.player}!")
         for line in self.welcome_message:
             print(line)
 
@@ -54,16 +54,16 @@ class Game:
 
         user_input = input("What do you think is the correct answer?")
         if int(user_input) == question.correct_answer:
-            print(question.correct_answer_response)
+            print(art("happy27") + " " +question.correct_answer_response)
             return False
         else:
-            print(question.incorrect_answer_response)
+            print(f"{art('sad4')} {question.incorrect_answer_response}")
             print(f"The correct answer is: {question.get_correct_answer()}")
             return True
 
 
 if __name__ == '__main__':
-    player_name = input("What is your name?: ")
+    player_name = input("What is your name? ")
     # player_name = "Blah Blah"
     game = Game(player_name)
     game.welcome()
