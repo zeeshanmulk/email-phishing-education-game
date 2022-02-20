@@ -1,4 +1,8 @@
 {
+  "knowledge": [
+    "Malware, which is short for malicious software, can be a file or a piece of code, which \nis typically delivered over a network, that can infect, steal, explore or \nperform any behaviour an attacker wants. A malware compromised device may be used \nby an attacker to gain control of the device, steal sensitive information, \nexplore other devices on the network, or infect other devices.",
+    "This is another text."
+  ],
   "questions": [
     {
       "question_id": 1,
@@ -47,5 +51,16 @@
       "incorrect_answer_response": "Opps. You opened the link and boom, now you have a malware installed in \nyour computer. Never open executables attached in an email."
     }
   ],
-  "welcome": "Hiya! Welcome to a very simple email phishing educational game. You can learn\nsome stuff, or if you feel confident, head straight to scenario based multiple\nchoice questions. It's marked but don't worry! Your boss won't be notified if\nyou do poorly. Just make sure to visit the Learn part. Have fun!"
+  "welcome": "Hiya! Welcome to a very simple email and malware awareness educational game. You can learn\nsome cool stuff, or if you feel confident, head straight to scenario based multiple\nchoice questions. It's marked but don't worry! Your boss won't be notified if\nyou do poorly. Just make sure to visit the Learn part. Have fun!",
+  "references": [
+    "https://en.wikipedia.org/wiki/Malware",
+    "https://www.paloaltonetworks.com/cyberpedia/what-is-malware"
+  ],
+  "attack_vectors": [
+    "Did you know the USB you are carrying might contain malware that can infect your station? \nIt can wreak havoc by encrypting all computers if it's a ransomware.",
+    "Leave your station locked when you leave your desk temporarily. If you are done for the day, sign off.",
+    "I know it's tempting to know what your colleagues on a different team are working on next room.\nHold that temptation! You are bound by NDA just like they are.",
+    "Always check for phishing emails. Check for common indicators like sender's address, spelling errors, weird \nlinks. Should you click on it, you might be directed to a compromised website \nand be prompted to download and run a file. And there goes our security. Welcome ransomware!",
+    "You know you are awesome at work and many recruiters are trying to get to you. Do you know\nthat some attackers may pose as recruiters with lucrative job offers and social\nengineer you to get confidential information? Always verify the source!"
+  ]
 }

@@ -15,6 +15,9 @@ class Game:
         self.information_json = self.read_json_file()
         self.welcome_message = self.information_json['welcome']
         self.get_questions()
+        self.knowledge = self.information_json['knowledge']
+        self.references = self.information_json['references']
+        self.attack_vectors = self.information_json['attack_vectors']
         self.score = 0
         self.points_per_question = round((100 / len(self.questions)), 2)
 
@@ -38,41 +41,77 @@ class Game:
     def start(self):
         print(self.welcome_message)
         print()
-        self.player = input("So, what should I call you? - ")
+        self.player = input("So, what should I call you? ")
         tprint(f"Hello {self.player}!")
         self.main_menu()
 
     def main_menu(self):
         game_over = False
         while not game_over:
+            print(art("boombox1"))
             print()
-            print("Select from the following options:")
-            print("1. Learn about Email phishing.")
-            print("2. Test your knowledge with a trivia game.")
-            print("3. Quit")
+            print("Here is the glorious main menu for your selection pleasure.")
+            print("1. Learn about Email compromise and malware.")
+            print("2. Learn about how you can be compromised to install a malware.")
+            print("3. Test your knowledge with a trivia game.")
+            print("4. Further readings.")
+            print("5. Quit.")
+            print(art("bee"))
             print()
 
             try:
-                player_input = int(input("So, what will it be? "))
+                player_input = int(input(f"So, what will it be {self.player}? "))
             except ValueError:
                 print("Try a number instead please.")
                 continue
 
-            if int(player_input) == 1:
-                continue
-            elif int(player_input) == 2:
+            if player_input == 1:
+                self.training()
+            elif player_input == 2:
+                self.display_attack_vectors()
+            elif player_input == 3:
                 self.ask_questions()
-            elif int(player_input) == 3:
+            elif player_input == 4:
+                self.display_references()
+            elif player_input == 5:
                 game_over = True
             else:
-                print("Nah, select something that I can actually do now. More features TBA. Try again!")
+                print("Nah, select something that I can actually do now. Try again!")
 
         print(f"{self.player}, thank you for playing. Hope to see you soon!")
         sys.exit(0)
 
+    def training(self):
+        print(f"Alright {self.player}, its time for some lessons. I shall dispense what I know in a random order.")
+        print()
+        print("First up is:")
+        shuffle(self.knowledge)
+        training_over = False
+        while not training_over:
+            for knowledge in self.knowledge:
+                print(knowledge)
+                print()
+                if self.yes_user_response_validator():
+                    continue
+                else:
+                    break
+            training_over = True
+        print()
+        print("Looks like we are done for now. Returning to main menu.")
+        self.main_menu()
+
+    def display_references(self):
+        print("Ok, here is what I got for further readings. These resources were also used to prepare")
+        print("this training module.")
+        for reference in self.references:
+            print(reference)
+        print()
+        self.pause()
+        self.main_menu()
+
     def ask_questions(self):
         print()
-        print(f"Alright {self.player}, let's test your email phishing knowledge with a few questions!")
+        print(f"Alright {self.player}, let's test your knowledge with a few questions!")
         game_over = False
         shuffle(self.questions)
         while not game_over:
@@ -120,6 +159,36 @@ class Game:
     def pause():
         print()
         input("Press Enter/Return to continue...")
+
+    def display_attack_vectors(self):
+        print("So you want to know how YOU can be used as an attack vector? Dispensing knowledge...")
+        shuffle(self.attack_vectors)
+        training_over = False
+        while not training_over:
+            for vector in self.attack_vectors:
+                print()
+                print(vector)
+                if self.yes_user_response_validator():
+                    continue
+                else:
+                    break
+            training_over = True
+        print()
+        print("Looks like we are done! Returning to main menu.")
+        self.main_menu()
+
+    @staticmethod
+    def yes_user_response_validator():
+        while True:
+            print()
+            user_response = input("Should I continue? (y/n): ")
+            if user_response[0].lower() == 'y':
+                return True
+            elif user_response[0].lower() == 'n':
+                return False
+            else:
+                print("Lets stick a simple yes or a no.")
+                continue
 
 
 if __name__ == '__main__':
