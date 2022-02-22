@@ -1,66 +1,148 @@
 {
   "knowledge": [
-    "Malware, which is short for malicious software, can be a file or a piece of code, which \nis typically delivered over a network, that can infect, steal, explore or \nperform any behaviour an attacker wants. A malware compromised device may be used \nby an attacker to gain control of the device, steal sensitive information, \nexplore other devices on the network, or infect other devices.",
-    "This is another text."
+    "Malware, which is short for malicious software, can be a file or a piece of code, which is typically delivered over a network, that can infect, steal, explore or perform any behaviour an attacker wants. A malware compromised device may be used by an attacker to gain control of the device, steal sensitive information, explore other devices on the network, or infect other devices.",
+    "Social engineering is tricking a user using psychological manipulation to give away sensitive or personal information. Remember, humans are very trusting and wants to help out by default. Attackers can exploit that for example to obtain credentials to compromise a company asset which can lead to deployment of ransomware or data breach. Both are very damaging to the company.",
+    "Email phishing is when attackers impersonate a legitimate organization via email which is designed to steal information. The emails can convey a sense of urgency and is typically about password resets, account hack notifications, payment notifications, etc. Users are tricked to give away sensitive information on a fake website that can lead to account compromise, malware installation, data breaches, etc. Did you know that phishing is responsible for 90% of security breaches?",
+    "Business email compromise (BEC) is type of an email scam where attackers impersonate a legitimate employee or business partner, and make seemingly legitimate request to disclose sensitive information or perform actions that benefit the attackers financially.",
+    "Ransomware, which is all the rage recently, 2022 as of writing this, is a type of malware that encrypts the whole system drive or user's personal files and folders with a key/password. In either cases, access to the computer or user's files is restricted with some sort of ransom message. For large corporations, there is usually some contact information for ransom negotiation. Some ransom groups even have 24/7 support channel! Once a payment has been received, the key/password is provided and the assets can be decrypted.",
+    "Cybersecurity tries to protect Confidentiality, Integrity and Availability (CIA). Confidentiality is ensuring data is only available to the authorized person or process, Integrity is ensuring data can only be modified by an authorised person or process, Availability is ensuring data is accessible to authorised person or process. Compromising any of the triad is a security incident.",
+    "Your company has great policies for good security practices. For example, never plug in a USB to your workstation. Don't violate NDAs. Don't leave your workstation unlocked, and many more. If you need to know more, ask your team lead for more information."
   ],
   "questions": [
     {
       "question_id": 1,
-      "question": "What is phishing?",
-      "correct_answer": 2,
+      "question": "You notice an email from macrosoft.com with the subject, \"Your account was compromised.\" What kind of attack is this?",
+      "correct_answer": 3,
       "answers": [
-        "It's a new trendy catch-phrase to say fishing!",
-        "It's is a type of online scam where hackers impersonate legitimate organizations via email, \ntext message, advertisement or other means in order to steal sensitive information.",
-        "It's a novel way hackers steal sensitive information via email, text message, advertisement, or other means."
+        "Business Email Compromise (BEC).",
+        "Ransomware.",
+        "Email phishing."
       ],
       "correct_answer_response": "You got it! Be on the lookout for suspicious emails, text messages, etc.",
       "incorrect_answer_response": "No that's not it. Read below."
     },
     {
       "question_id": 2,
-      "question": "You notice you have an email titled, \"Unusual Microsoft activity detected\". \nThe email has just one blue link titled \"Check recent activity\". What do you do?",
+      "question": "You notice you have an email titled, \"Unusual GitHub activity detected\". The email has just one blue link titled \"Check recent activity\". What do you do?",
       "correct_answer": 1,
       "answers": [
-        "You delete it!",
-        "You click on the link. After all, whats the worst that can happen, right?"
+        "No questions asked. You delete it pronto!",
+        "You click on the link. After all, whats the worst that can happen, right? Your company has great firewall and antivirus software.",
+        "You check your Github account for any unusual activity recently."
       ],
       "correct_answer_response": "You got it! This is a very crude attempt at phishing really. This was an easy one mind you!",
-      "incorrect_answer_response": "No no! An empty email with just a blue link is a HUGE red flag. Just delete it!"
+      "incorrect_answer_response": "Uh oh! An empty email with just a blue link is a HUGE red flag. It's a very crude email phishing attempt. Just delete it!"
     },
     {
       "question_id": 3,
-      "question": "You get an urgent email from IT asking for your password for an emergency, otherwise you \nwill get locked out in the next 5 minutes. What do you do?",
+      "question": "You get an urgent email from IT asking for your password for an emergency, otherwise you will get locked out in the next 5 minutes. What do you do?",
       "correct_answer": 2,
       "answers": [
-        "You respond with your password! It is from IT after all, right?",
+        "You respond immediately with your password! It is from IT after all, right?",
         "You delete the email. You should never share your password for any circumstances!",
         "You contact IT and share your password verbally."
       ],
-      "correct_answer_response": "That's correct! You should under no circumstances share your password with anyone.",
-      "incorrect_answer_response": "Nope. You should never ever share your password. Phishing emails are \ndesigned with a sense of false urgency. Please stop and think first."
+      "correct_answer_response": "That's correct! You should under no circumstances share your password with anyone. It's a phishing attempt.",
+      "incorrect_answer_response": "Nope. You should never ever share your password! Phishing emails are designed with a sense of false urgency. Please stop and think first."
     },
     {
       "question_id": 4,
-      "question": "You get an email from your boss with an attachment \"critical_business_plan.exe\". There \nare instructions in the body of the email to run it as soon as possible. What do you do?",
+      "question": "You get an email from your team lead with an attachment \"unpack_me_codebase.exe\". There are instructions in the body of the email to run it as soon as possible. What do you do?",
       "correct_answer": 2,
       "answers": [
-        "Its from your boss!! You must run it as soon as possible! Your job may be on the line.",
-        "You verify that the email was from your boss by checking the from address carefully. You then \ncontact your boss and ask if he sent the email and inform him that his email account \nmay have been compromised."
+        "Its from your boss!! You run it without hesitation. He couldn't have sent weird stuff your way.",
+        "You verify that the email was from your boss by checking the from address carefully, which appears correct. You then contact your boss and ask if he sent the email and inform him that his email account may have been compromised."
       ],
-      "correct_answer_response": "That's correct! You should never open an executable file sent over email \neven if its from your boss. His email account may have been compromised.",
-      "incorrect_answer_response": "Opps. You opened the link and boom, now you have a malware installed in \nyour computer. Never open executables attached in an email."
+      "correct_answer_response": "That's correct! You should never open an executable file sent over email even if its from your team lead. His email account may have been compromised.",
+      "incorrect_answer_response": "Opps. You opened the link and boom, now you have a malware installed in your workstation. Its spreading over the network! Never open executables attached in an email."
+    },
+    {
+      "question_id": 5,
+      "question": "You get an email from your team lead, who is currently participating in a conference at a far far away country. He is having difficulty connecting to GitHub and requesting you to upload a zipped copy of your current project's codebase to a secure website he provided. What do you do? ",
+      "correct_answer": 2,
+      "answers": [
+        "Your team lead is having GitHub login difficulty so might as well upload the codebase zipped up. After all, the email address is your team lead's.",
+        "Hmm. Even though his email address is correctly typed, you suspect something is afoot. You decide to contact your team lead directly via his phone and ask him about the request."
+      ],
+      "correct_answer_response": "That's correct! This is an example of Business Email Compromise attack. Your team lead's account may have been spoofed. An attacker has gained knowledge of your team lead's whereabouts and is trying to gain access to sensitive information.",
+      "incorrect_answer_response": "Nope. This is an example of Business Email Compromise attack. Your team lead's account has been spoofed. Try contacting him directly via some other means."
+    },
+    {
+      "question_id": 6,
+      "question": "You get an from email from Github with a security code. It has a link that directs you to a website to enter the security code but you need to login first. How do you respond?",
+      "correct_answer": 1,
+      "answers": [
+        "Your security sense is tingling. You don't recall triggering a 2FA challenge. You haven't even turned on your 2FA. You delete the email.",
+        "Its from Github! You must have been logged out somewhere. You click on the link and login to your Github account and provide the security code."
+      ],
+      "correct_answer_response": "That's correct. This is a kind of phishing attack. You should really setup the 2FA on your GitHub account.",
+      "incorrect_answer_response": "Sad face again. This is a kind of phishing attack. Check the link and ensure you have 2FA on your Github account."
+    },
+    {
+      "question_id": 7,
+      "question": "You work on a shared workstation and when you login, you notice your workstation is noticeably sluggish. When you open your browser, you notice unexpected pop-ups. What do you do?",
+      "correct_answer": 3,
+      "answers": [
+        "Well, business workstations are shared by many employees so perhaps the hard-drive is full. You go about your day.",
+        "You shut down the workstation and call IT. You twiddle your thumb in the meantime.",
+        "You unplug your workstation from the network and call IT. You twiddle your thumb in the meantime."
+      ],
+      "correct_answer_response": "Yup. Your workstation may have been compromised. It could have been from the previous session from a different employee. Leaving the workstation isolated helps IT conduct digital forensic.",
+      "incorrect_answer_response": "The worst thing you can do when you suspect an infection is to shut down the workstation. You are erasing digital evidence from memory. IT could find it useful for forensic analysis."
+    },
+    {
+      "question_id": 8,
+      "question": "You are awesome at your work, getting good feedback, and have a great feeling of accomplishment. Yet you feel you are not able to grow as you would have liked. You receive a phone call from a tech company recruiter with a lucrative job offer. He is quite knowledge on tech and asks you some specific questions about your current project. How do you respond?",
+      "correct_answer": 2,
+      "answers": [
+        "It wouldn't hurt to share some details. The guys appears genuine so there is no harm in sharing. You may land your dream job!",
+        "Hmm. You recall that you have NDAs to honor and can't share project specific details. You decline."
+      ],
+      "correct_answer_response": "That's correct. You might have been a victim of social engineering and the fellow was trying to get some work related information from you. It may used for planning further attacks.",
+      "incorrect_answer_response": "Even though the dream job sounds really lucrative, this could have been literally anyone trying to get some insider information from you. This is an example of social engineering attack."
+    },
+    {
+      "question_id": 9,
+      "question": "You come in to work on Monday morning energized by an eventful weekend, turn your monitor on and is greeted with a message, \"Your files are now encrypted. Pay us 50 bitcoins to unlock.\" What kind of attack is this?",
+      "correct_answer": 1,
+      "answers": [
+        "Ransomeware",
+        "Malware",
+        "Virus",
+        "Someone's idea of a cruel joke. Restarting the workstation will surely fix this."
+      ],
+      "correct_answer_response": "That's correct. It is a classic example of a ransomware. You should contact your IT.",
+      "incorrect_answer_response": "Nope. That's a ransomware. Has all the classic signs in it. It is a special kind of malware."
+    },
+    {
+      "question_id": 10,
+      "question": "You have been given admin privileges and really need Adobe Photoshop to create a snazzy poster to impress your client and present your latest work. You don't have time for IT request which can take days so you head off to a torrent site, download and install Photoshop. What could you have unleashed?",
+      "correct_answer": 1,
+      "answers": [
+        "Malware of any kind, like ransomware, key loggers, viruses, etc.",
+        "Torrent sites are perfectly safe and there is no risk of infection. They are vetted before being allowed on site.",
+        "Could be an example of phishing."
+      ],
+      "correct_answer_response": "Correct. Torrent sites can host all sorts of fun dangerous stuff along with legitimate software. Malware is often bundled with them.",
+      "incorrect_answer_response": "Nope. Attackers love to bundle various sort of malware with legitimate cracked software, hoping to score a target. You may have just compromised the security of your company. Stick to legitimate IT request. Remember, with great admin power comes great responsibilities."
     }
   ],
-  "welcome": "Hiya! Welcome to a very simple email and malware awareness educational game. You can learn\nsome cool stuff, or if you feel confident, head straight to scenario based multiple\nchoice questions. It's marked but don't worry! Your boss won't be notified if\nyou do poorly. Just make sure to visit the Learn part. Have fun!",
+  "welcome": "Hiya! Welcome to a very simple email and malware awareness educational game. You can learn some cool stuff, or if you feel confident, head straight to scenario based multiple choice questions. There is a scoring system but don't worry! Your boss won't be notified if you do poorly. Feel free to browse different sections. Have fun!",
   "references": [
     "https://en.wikipedia.org/wiki/Malware",
-    "https://www.paloaltonetworks.com/cyberpedia/what-is-malware"
+    "https://www.paloaltonetworks.com/cyberpedia/what-is-malware",
+    "https://www.fbi.gov/scams-and-safety/common-scams-and-crimes/business-email-compromise",
+    "https://www.pensar.co.uk/blog/what-to-do-if-youve-got-a-virus",
+    "https://calgary.ctvnews.ca/cost-of-data-breaches-in-canada-hit-new-record-in-2021-ibm-1.5526127"
   ],
   "attack_vectors": [
-    "Did you know the USB you are carrying might contain malware that can infect your station? \nIt can wreak havoc by encrypting all computers if it's a ransomware.",
-    "Leave your station locked when you leave your desk temporarily. If you are done for the day, sign off.",
-    "I know it's tempting to know what your colleagues on a different team are working on next room.\nHold that temptation! You are bound by NDA just like they are.",
-    "Always check for phishing emails. Check for common indicators like sender's address, spelling errors, weird \nlinks. Should you click on it, you might be directed to a compromised website \nand be prompted to download and run a file. And there goes our security. Welcome ransomware!",
-    "You know you are awesome at work and many recruiters are trying to get to you. Do you know\nthat some attackers may pose as recruiters with lucrative job offers and social\nengineer you to get confidential information? Always verify the source!"
+    "Did you know the USB you are carrying might contain malware that can infect your station? It can wreak havoc by encrypting all computers if it's a ransomware. Check the company policy on removable devices.",
+    "Leave your station locked when you leave your desk temporarily. If you are done for the day, sign off. You are leaving your workstation open for an intruder should he/she manages to slip in.",
+    "I know it's tempting to know what your colleagues on a different team are working on next room. Hold that temptation! You are bound by NDA just like they are.",
+    "Always check for phishing emails. Check for common indicators like sender's address, spelling errors, weird links. Should you click on it, you might be directed to a compromised website and be prompted to download and run a file, somethings without even clicking! And there goes our security. Welcome ransomware!",
+    "You know you are awesome at work and many recruiters are trying to get to you. Do you know that some attackers may pose as recruiters with lucrative job offers and social engineer you to get confidential information? Always verify the source!",
+    "If you notice that your workstation is running extra sluggish, and see some other strange indicators like strange popups, your workstation might have been compromised. Unplug your workstation from the network and call IT.",
+    "Did you know that the average cost of a data breach according to a report by IBM Canada in 2021 was around $6.76 million per incident? All it takes is one weak link and the weakest link in security business is your kind. That's correct, Homo Sapiens, aka YOU! Remember to be vigilant and exercise good security habits.",
+    "Did you know that your company has policies, standards and guidelines for good security posture and YOU as an employee are responsible to maintain it? If you haven't already, discover them on the internal company website or ask your team lead. It can save you some pain in the future."
   ]
 }

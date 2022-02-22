@@ -1,11 +1,33 @@
+"""
+This is a simple email and malware awareness training game. It loads content from a json
+file, which can be modified independently. The score per question is calculate automatically.
+Not much say really. Have fun.
+
+__author__ = "Zeeshan Mulk"
+"""
+
 import json
 import sys
-
 from art import art, tprint
-from question import Question
 from random import shuffle
+import textwrap
 
 _data_file = 'resources/data.json'
+_text_width = 80
+
+
+class Question:
+    def __init__(self, question_id, question, correct_answer, answers, correct_answer_response,
+                 incorrect_answer_response):
+        self.incorrect_answer_response = incorrect_answer_response
+        self.correct_answer_response = correct_answer_response
+        self.answers = answers
+        self.correct_answer = correct_answer
+        self.question_id = question_id
+        self.question = question
+
+    def get_correct_answer(self):
+        return self.answers[self.correct_answer - 1]
 
 
 class Game:
@@ -34,12 +56,12 @@ class Game:
             with open(_data_file, 'r') as f:
                 return json.loads(f.read())
         except IOError:
-            print("Could not read data file. Make sure there is a resources folder with data.json file in it. "
-                  "Exiting...")
+            print(textwrap.fill("Could not read data file. Make sure there is a resources folder with "
+                                "data.json file in it. Exiting...", _text_width))
             sys.exit(1)
 
     def start(self):
-        print(self.welcome_message)
+        print(textwrap.fill(self.welcome_message, _text_width))
         print()
         self.player = input("So, what should I call you? ")
         tprint(f"Hello {self.player}!")
@@ -51,10 +73,10 @@ class Game:
             print(art("boombox1"))
             print()
             print("Here is the glorious main menu for your selection pleasure.")
-            print("1. Learn about Email compromise and malware.")
-            print("2. Learn about how you can be compromised to install a malware.")
+            print("1. Learn about email compromise and malware.")
+            print("2. Learn about how YOU can be compromised.")
             print("3. Test your knowledge with a trivia game.")
-            print("4. Further readings.")
+            print("4. Further readings and references.")
             print("5. Quit.")
             print(art("bee"))
             print()
@@ -89,7 +111,8 @@ class Game:
         training_over = False
         while not training_over:
             for knowledge in self.knowledge:
-                print(knowledge)
+                print()
+                print(textwrap.fill(knowledge, _text_width))
                 print()
                 if self.yes_user_response_validator():
                     continue
@@ -122,7 +145,6 @@ class Game:
                     self.score = 100 if self.score > 99.50 else self.score
                     print()
                     print(f"Your current score is: {self.score}")
-                    self.pause()
                 # Incorrect answer
                 else:
                     print()
@@ -134,25 +156,29 @@ class Game:
     def ask_a_question(self, question):
         print()
         print(art("singing"))
-        print(question.question)
+        print(textwrap.fill(question.question, _text_width))
+        print(art("singing2"))
         print()
         index = 1
         for answer in question.answers:
-            print(f"{index}. {answer}")
+            print(f"{index}. {textwrap.fill(answer, _text_width)}")
             index = index + 1
         print(f"{index}. Back to main menu.")
 
-        user_input = input("What do you think is the correct answer?")
+        user_input = input("What do you think is the correct answer? ")
         if int(user_input) == question.correct_answer:
-            print(art("happy27") + " " + question.correct_answer_response)
+            print(art("happy27") + " " + textwrap.fill(question.correct_answer_response, 80))
+            self.pause()
             return True
         elif int(user_input) == index:
             print("Alright. Back to main menu it is.")
             print(f"Your current score is: {self.score}")
+            self.score = 0
             self.main_menu()
         else:
-            print(f"{art('sad4')} {question.incorrect_answer_response}")
-            print(f"The correct answer is: {question.get_correct_answer()}")
+            print(f"{art('sad4')} {textwrap.fill(question.incorrect_answer_response, _text_width)}")
+            print(f"The correct answer is: {textwrap.fill(question.get_correct_answer(), _text_width)}")
+            self.pause()
             return False
 
     @staticmethod
@@ -167,7 +193,7 @@ class Game:
         while not training_over:
             for vector in self.attack_vectors:
                 print()
-                print(vector)
+                print(textwrap.fill(vector, _text_width))
                 if self.yes_user_response_validator():
                     continue
                 else:
@@ -187,7 +213,7 @@ class Game:
             elif user_response[0].lower() == 'n':
                 return False
             else:
-                print("Lets stick a simple yes or a no.")
+                print("Lets stick with a simple yes or a no.")
                 continue
 
 
