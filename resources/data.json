@@ -148,7 +148,8 @@
     "You know you are awesome at work and many recruiters are trying to get to you. Do you know that some attackers may pose as recruiters with lucrative job offers and social engineer you to get confidential information about our company? Always verify the source!",
     "If you notice that your workstation is running extra sluggish, and see some other strange indicators like strange popups, your workstation might have been compromised. Unplug your workstation from the network and call out IT.",
     "Did you know that the average cost of a data breach according to a report by IBM Canada in 2021 was around $6.76 million per incident? All it takes is one weak link and the weakest link in the security business is your kind. That's correct, Homo Sapiens, aka YOU! Remember to be vigilant and exercise good security habits.",
-    "Did you know that Softwaregenix has policies, standards and guidelines for good security posture and YOU as an employee are responsible to maintain it? Visit the policy section today!"
+    "Did you know that Softwaregenix has policies, standards and guidelines for good security posture and YOU as an employee are responsible to maintain it? Visit the policy section today!",
+    "Have you implemented 2-factor authentication across various web services that you use for work? If your password has been compromised, for example, you re-used your password from a website that has recently been breached, attackers can get access to your sensitive work materials and could potentially compromise our network. Implement 2FA today! "
   ],
   "company_regulations": [
     {
