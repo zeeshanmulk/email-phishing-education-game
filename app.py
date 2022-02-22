@@ -37,6 +37,7 @@ class Game:
         self.information_json = self.read_json_file()
         self.welcome_message = self.information_json['welcome']
         self.get_questions()
+        self.regulations = self.information_json['company_regulations']
         self.knowledge = self.information_json['knowledge']
         self.references = self.information_json['references']
         self.attack_vectors = self.information_json['attack_vectors']
@@ -73,11 +74,12 @@ class Game:
             print(art("boombox1"))
             print()
             print("Here is the glorious main menu for your selection pleasure.")
-            print("1. Learn about email compromise and malware.")
-            print("2. Learn about how YOU can be compromised.")
-            print("3. Test your knowledge with a trivia game.")
-            print("4. Further readings and references.")
-            print("5. Quit.")
+            print("1. Learn about company policies regarding email and malware security.")
+            print("2. Learn about email compromise, malware, and other relevant information.")
+            print("3. Learn about how YOU can be compromised.")
+            print("4. Test your knowledge with a trivia game.")
+            print("5. Further readings and references.")
+            print("6. Quit.")
             print(art("bee"))
             print()
 
@@ -88,14 +90,16 @@ class Game:
                 continue
 
             if player_input == 1:
-                self.training()
+                self.display_regulations()
             elif player_input == 2:
-                self.display_attack_vectors()
+                self.training()
             elif player_input == 3:
-                self.ask_questions()
+                self.display_attack_vectors()
             elif player_input == 4:
-                self.display_references()
+                self.ask_questions()
             elif player_input == 5:
+                self.display_references()
+            elif player_input == 6:
                 game_over = True
             else:
                 print("Nah, select something that I can actually do now. Try again!")
@@ -120,12 +124,13 @@ class Game:
                     break
             training_over = True
         print()
-        print("Looks like we are done for now. Returning to main menu.")
+        print("Looks like we are done! Returning to main menu.")
         self.main_menu()
 
     def display_references(self):
         print("Ok, here is what I got for further readings. These resources were also used to prepare")
         print("this training module.")
+        print()
         for reference in self.references:
             print(reference)
         print()
@@ -215,6 +220,30 @@ class Game:
             else:
                 print("Lets stick with a simple yes or a no.")
                 continue
+
+    def display_regulations(self):
+        print(textwrap.fill("While Softwaregenix has many different policies, standards, and procedures, "
+                            "following are a few applicable ones.", _text_width))
+        shuffle(self.regulations)
+        training_over = False
+        while not training_over:
+            for regulation in self.regulations:
+                print()
+                print("Policy: " + textwrap.fill(regulation['policy'], _text_width))
+                if regulation['standard'] != 'N/A':
+                    print("Standard: " + textwrap.fill(regulation['standard'], _text_width))
+                if regulation['procedure'] != 'N/A':
+                    print("Procedure: " + textwrap.fill(regulation['procedure'], _text_width))
+                if regulation['guidelines'] != 'N/A':
+                    print("Guidelines: " + textwrap.fill(regulation['guidelines'], _text_width))
+                if self.yes_user_response_validator():
+                    continue
+                else:
+                    break
+            training_over = True
+        print()
+        print("Looks like we are done! Returning to main menu.")
+        self.main_menu()
 
 
 if __name__ == '__main__':
