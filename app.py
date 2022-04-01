@@ -17,14 +17,8 @@ _text_width = 80
 
 
 class Question:
-    def __init__(self, question_id, question, correct_answer, answers, correct_answer_response,
-                 incorrect_answer_response):
-        self.incorrect_answer_response = incorrect_answer_response
-        self.correct_answer_response = correct_answer_response
-        self.answers = answers
-        self.correct_answer = correct_answer
-        self.question_id = question_id
-        self.question = question
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
 
     def get_correct_answer(self):
         return self.answers[self.correct_answer - 1]
@@ -46,9 +40,12 @@ class Game:
 
     def get_questions(self):
         for question in self.information_json['questions']:
-            question_obj = Question(question['question_id'], question['question'], question['correct_answer'],
-                                    question['answers'], question['correct_answer_response'],
-                                    question['incorrect_answer_response'])
+            question_obj = Question(question_id=question['question_id'],
+                                    question=question['question'],
+                                    correct_answer=question['correct_answer'],
+                                    answers=question['answers'],
+                                    correct_answer_response=question['correct_answer_response'],
+                                    incorrect_answer_response=question['incorrect_answer_response'])
             self.questions.append(question_obj)
 
     @staticmethod
